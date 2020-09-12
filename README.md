@@ -1,7 +1,9 @@
 # tableExtractor
 
+### version
+V1
 
-### Attention
+### Note
 对pdf文件的处理可能会出现表格错位的情况，建议用office先转成word再进行处理
 具体步骤是:
   1. 右键pdf文件 然后选择MS word 打开
@@ -25,7 +27,7 @@ python main.py
 ```bash
 请输入SecretId: #从腾讯云获取
 请输入SecretKey: #从腾讯云获取
-请输入文件夹路径(相对or绝对): # 直接回车表示默认在 "rawFile/" 路径下
+请输入文件夹路径(相对or绝对): # 直接回车表示默认处理在 "rawFile/" 路径下文件
 ```
 
 输出表格在 table/ 中可以找到
