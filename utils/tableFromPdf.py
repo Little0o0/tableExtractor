@@ -22,7 +22,7 @@ def extractTablesFromPdf(path):
                 tmpTable = [row for row in table]
                 DFList[i] = DFList[i] + tmpTable
 
-    DFList = [pd.DataFrame(x) for x in DFList]
+    DFList = [pd.DataFrame(x).applymap(lambda x:x.replace("\n","")) for x in DFList]
     with pd.ExcelWriter(f"table/{filename}.xlsx") as xlsx:
         for i, df in enumerate(DFList):
             df.to_excel(xlsx, sheet_name=f"{i}_sheet", index=False)
