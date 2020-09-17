@@ -67,7 +67,7 @@ def extractTablesFromImage(picture,SecretId,SecretKey):
     for i in range(len(rowIndex)):
         data.loc[rowIndex[i],colIndex[i]] = re.sub(" ","",content[i])
 
-    data = data.applymap(lambda x:x.replace("\n","")
+    data = data.applymap(lambda x:x.replace("\n",""))
     # writer = pd.ExcelWriter("../tables/" + re.match(".*\.",f.name).group() + "xlsx", engine='xlsxwriter')
     writer = pd.ExcelWriter(f"table/{filename}.xlsx", engine='xlsxwriter')
 
